@@ -8,10 +8,9 @@
  */
 int main(void)
 {
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-	int a = (int)str;
+	int str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	putchar(a);
+	putchar(str);
 	/* return an int */
 	return (1);
 }
