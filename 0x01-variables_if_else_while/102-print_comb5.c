@@ -54,7 +54,7 @@ int main(void)
 		}
 		if (a == 56)
 			g = 1;
-		f++
+		f++;
 	}
 	putchar('\n');
 
