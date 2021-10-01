@@ -10,7 +10,7 @@ int main(void)
 {
 	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	scanf("%c", &str);
+	scanf("%s", str);
 	/* return an int */
 	return (1);
 }
