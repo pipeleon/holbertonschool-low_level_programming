@@ -8,9 +8,7 @@
  */
 int main(void)
 {
-	const char x[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
-
-	write(STDOUT_FILENO, x, strlen(x));
+	system("echo 'and that piece of art is useful\" - Dora Korpar, 2015-10-19'");
 	/* return an int */
 	return (1);
 }
