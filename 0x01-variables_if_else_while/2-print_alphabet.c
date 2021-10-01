@@ -7,11 +7,13 @@
  * Return: 0
  */
 
-void main(void)
+int main(void)
 {
 	int a;
 
 	for(a = 97; a <=122; a++){
 		printf("%c", a);
 	}
+
+	return (0);
 }
