@@ -1,0 +1,14 @@
+#include <stdio.h>
+/* Task 6 0 Low Programming */
+
+/**
+ * main - Output sizes of types
+ * Description: Just print sizes of types
+ * Return: 0
+ */
+int main(void)
+{
+	printf("Size of a char: %zu byte(s)\n", sizeof(char));
+	/* return an int */
+	return (0);
+}
