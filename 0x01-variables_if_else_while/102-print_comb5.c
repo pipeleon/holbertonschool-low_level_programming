@@ -16,10 +16,12 @@ int main(void)
 	int e;
 	int f;
 	int g;
+	int h;
 
-	e = 1;
+	e = 0;
 	f = 0;
 	g = 0;
+	h = 1;
 
 	for (a = 48; a <= 57; a++)
 	{
@@ -27,7 +29,7 @@ int main(void)
 		{
 			for (c = 48 + f; c <= 57; c++)
 			{
-				for (d = 48 + e; d <= 57; d++)
+				for (d = 48 + e + h; d <= 57; d++)
 				{
 					putchar(a);
 					putchar(b);
@@ -41,11 +43,13 @@ int main(void)
 					}
 
 				}
-
+				h = 0;
+				
 			}
 			if (b != 56)
 			{
 				e++;
+				h = 1;
 			}
 			else
 			{
