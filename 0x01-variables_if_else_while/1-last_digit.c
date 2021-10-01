@@ -16,7 +16,7 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	int z = Math.abs(number) % 10);
+	int z = abs(number) % 10);
 	/* your code goes there */
 	if (z > 5)
 	{
@@ -28,7 +28,7 @@ int main(void)
 	}
 	else if (z < 6)
 	{
-		printf("Ldigit of %i is %i and is less than 6 and not 0, n, z");
+		printf("Last digit of %i is %i and is less than 6 and not 0, n, z");
 	}
 
 return (0);
