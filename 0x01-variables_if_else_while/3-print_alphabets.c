@@ -17,5 +17,7 @@ int main(void)
 	for (b = 65; b <= 90; b++)
 		putchar(b);
 
+	printf("\n");
+
 	return (0);
 }
