@@ -11,9 +11,9 @@ int main(void)
 {
 	int a;
 
-	for(a = 97; a <=122; a++){
+	for (a = 97; a <= 122; a++)
 		printf("%c", a);
-	}
+	printf("\n");
 
 	return (0);
 }
