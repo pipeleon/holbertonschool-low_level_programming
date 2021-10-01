@@ -8,9 +8,9 @@
  */
 int main(void)
 {
-	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
+	static const char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19";
 
-	scanf("%s", str);
+	fwrite(str, sizeof(str) - 1, 1, stdout);
 	/* return an int */
 	return (1);
 }
