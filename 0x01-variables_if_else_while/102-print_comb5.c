@@ -17,7 +17,7 @@ int main(void)
 	int f;
 	int g;
 
-	e = 0;
+	e = 1;
 	f = 0;
 	g = 0;
 
@@ -27,7 +27,7 @@ int main(void)
 		{
 			for (c = 48 + f; c <= 57; c++)
 			{
-				for (d = 49 + e; d <= 57; d++)
+				for (d = 48 + e; d <= 57; d++)
 				{
 					putchar(a);
 					putchar(b);
