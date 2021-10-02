@@ -17,11 +17,13 @@ int main(void)
 	int f;
 	int g;
 	int h;
+	int cont;
 
 	e = 0;
 	f = 0;
 	g = 0;
 	h = 1;
+	cont = 0;
 
 	for (a = 48; a <= 57; a++)
 	{
@@ -48,7 +50,8 @@ int main(void)
 			}
 			if (b != 56)
 			{
-				e++;
+				cont++;
+				e = cont;
 				h = 1;
 			}
 			else
