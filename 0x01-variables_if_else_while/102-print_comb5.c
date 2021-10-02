@@ -18,18 +18,20 @@ int main(void)
 	int g;
 	int h;
 	int cont;
+	int i;
 
 	e = 0;
 	f = 0;
 	g = 0;
 	h = 1;
 	cont = 0;
+	i = 0;
 
 	for (a = 48; a <= 57; a++)
 	{
 		for (b = 48; b <= 57 - g; b++)
 		{
-			for (c = 48 + f; c <= 57; c++)
+			for (c = 48 + f + i; c <= 57; c++)
 			{
 				for (d = 48 + e + h; d <= 57; d++)
 				{
@@ -62,7 +64,9 @@ int main(void)
 		}
 		if (a == 56)
 			g = 1;
-		f++;
+		f = 0;
+		h = 1;
+		i++;
 	}
 	putchar('\n');
 
