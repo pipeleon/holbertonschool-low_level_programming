@@ -57,6 +57,7 @@ int main(void)
 			else
 			{
 				e = 0;
+				f = 1;
 			}
 		}
 		if (a == 56)
