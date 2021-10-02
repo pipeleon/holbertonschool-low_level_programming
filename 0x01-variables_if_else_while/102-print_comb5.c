@@ -44,7 +44,7 @@ int main(void)
 
 				}
 				h = 0;
-				
+				e = 0;
 			}
 			if (b != 56)
 			{
