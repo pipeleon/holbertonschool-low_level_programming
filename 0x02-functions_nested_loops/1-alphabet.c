@@ -2,7 +2,7 @@
 /* Task 1 0x02. C - Functions, nested loops  */
 
 /**
- * main - Print alphabet
+ * print_alphabet - Print alphabet
  * Description: Print alphabet
  * Return: void
  */
