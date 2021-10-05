@@ -9,16 +9,7 @@
 
 int main(void)
 {
-	int a;
-	int b;
-	int c;
-	int d;
-	int e;
-	int f;
-	int g;
-	int h;
-	int cont;
-	int i;
+	int a, b, c, d, e, f, g, h, cont, i;
 
 	e = 0;
 	f = 0;
@@ -76,6 +67,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
-
 	return (0);
 }
