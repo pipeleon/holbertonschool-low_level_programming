@@ -29,8 +29,31 @@ int main(void)
 
 	for (a = 48; a <= 57; a++)
 	{
+		if (a == 57)
+			g = 1;
+		h = 1;
+		if (a != 48)
+		{
+			i++;
+			f = 0;
+		}
 		for (b = 48; b <= 57 - g; b++)
 		{
+			if (b == 57)
+			{
+				f++;
+				e = 0;
+				cont = 0;
+			}
+			else
+			{
+				if (b != 48)
+				{
+					cont++;
+					e = cont;
+					h = 1;
+				}
+			}
 			for (c = 48 + f + i; c <= 57; c++)
 			{
 				for (d = 48 + e + h; d <= 57; d++)
@@ -50,23 +73,7 @@ int main(void)
 				h = 0;
 				e = 0;
 			}
-			if (b != 56)
-			{
-				cont++;
-				e = cont;
-				h = 1;
-			}
-			else
-			{
-				e = 0;
-				f = 1;
-			}
 		}
-		if (a == 56)
-			g = 1;
-		f = 0;
-		h = 1;
-		i++;
 	}
 	putchar('\n');
 
