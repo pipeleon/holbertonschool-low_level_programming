@@ -2,8 +2,8 @@
 /* Task 6 0x02. C - Functions, nested loops  */
 
 /**
- * int _abs - Calculates teh absoluto value of an number
- * @: Any given number
+ * _abs - Calculates teh absoluto value of an number
+ * @a: Any given number
  * Description: absolute number
  * Return: int
  */
