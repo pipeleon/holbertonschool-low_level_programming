@@ -12,7 +12,7 @@ int print_last_digit(int a)
 	int z;
 
 	if (a < 0)
-		z = ((a * -1) % 10);
+		z = ((a % 10) * -1);
 	else
 		z = (a % 10);
 
