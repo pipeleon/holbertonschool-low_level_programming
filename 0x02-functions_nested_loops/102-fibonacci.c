@@ -14,15 +14,15 @@ int main(void)
 	long c;
 	int i;
 
-	for (i = 1; i <= 49; i++)
+	for (i = 1; i <= 50; i++)
 	{
-		if ( i == 1)
+		if (i == 1)
 		{
 			printf("%d, ", i);
 			a = 1;
 			b = 2;
 		}
-		else if (i != 1 && i != 49)
+		else if (i != 1 && i != 50)
 		{
 			printf("%lu, ", b);
 			c = b;
