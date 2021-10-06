@@ -26,14 +26,15 @@ int main(void)
 		}
 		else if (i != 1 && i != 98)
 		{
-			printf("%.0Lf, ", b);
+			printf("%.1Lf, ", b);
 			c = b;
+			printf("(%.0Lf - %.0Lf)", a, c);
 			b = (c + a);
 			a = c;
 		}
 		else
 		{
-			printf("%.0Lf", b);
+			printf("%.1Lf", b);
 			putchar('\n');
 		}
 	}
