@@ -2,7 +2,8 @@
 /* Task 100 0x02. C - Functions, nested loops  */
 
 /**
- * print_times_table - prints the 9 times table
+ * print_times_table - prints the any given number times table
+ * @n: parameter to give the table
  * Description: prints the 9 times table
  * Return: void
  */
