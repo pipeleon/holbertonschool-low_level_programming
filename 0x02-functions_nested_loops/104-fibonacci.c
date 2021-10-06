@@ -26,7 +26,7 @@ int main(void)
 		}
 		else if (i != 1 && i != 98)
 		{
-		        printf("%.0Lf, ", b);
+			printf("%.0Lf, ", b);
 			c = b;
 			b = (c + a);
 			a = c;
