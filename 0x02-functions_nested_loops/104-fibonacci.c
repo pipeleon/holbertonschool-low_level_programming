@@ -26,19 +26,14 @@ int main(void)
 		}
 		else if (i != 1 && i != 98)
 		{
-			if (i == 96)
-				printf("83621143489848422977, ");
-			else if (i == 97)
-				printf("135301852344706746049, ");
-			else
-				printf("%.0Lf, ", b);
+		        printf("%.0Lf, ", b);
 			c = b;
 			b = (c + a);
 			a = c;
 		}
 		else
 		{
-			printf("218922995834555169026");
+			printf("%.0Lf", b);
 			putchar('\n');
 		}
 	}
