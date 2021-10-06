@@ -1,5 +1,4 @@
 #include "main.h"
-/* Task 0 0x03. C - Debugging  */
 
 /**
 * main - tests function that prints if integer is positive or negative
