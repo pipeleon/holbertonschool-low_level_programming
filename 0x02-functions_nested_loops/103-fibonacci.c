@@ -14,23 +14,17 @@ int main(void)
 	long c;
 	long suma;
 
-	b = 1;
+	a = 1;
+	b = 2;
+	suma = 0;
 
 	while (b <= 4000000)
 	{
-		if (b == 1)
-		{
-			a = 1;
-			b = 2;
-		}
-		else
-		{
-			if ((b % 2) == 0)
-				suma = (suma + b);
-			c = b;
-			b = (c + a);
-			a = c;
-		}
+		if ((b % 2) == 0)
+			suma = (suma + b);
+		c = b;
+		b = (c + a);
+		a = c;
 	}
 	printf("%lu", suma);
 	putchar('\n');
