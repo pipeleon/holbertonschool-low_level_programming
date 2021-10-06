@@ -9,9 +9,9 @@
  */
 int main(void)
 {
-	long a;
-	long b;
-	long c;
+	long double a;
+	long double b;
+	long double c;
 	int i;
 
 	for (i = 1; i <= 98; i++)
@@ -24,14 +24,14 @@ int main(void)
 		}
 		else if (i != 1 && i != 98)
 		{
-			printf("%lu, ", b);
+			printf("%Lf, ", b);
 			c = b;
 			b = (c + a);
 			a = c;
 		}
 		else
 		{
-			printf("%lu", b);
+			printf("%Lf", b);
 			putchar('\n');
 		}
 	}
