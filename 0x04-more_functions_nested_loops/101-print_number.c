@@ -32,20 +32,16 @@ void print_number(int n)
 		{
 			j = (c - 1), p = 10;
 			while (j != 1)
-			{
-				p = (p * 10);
-				j--;
-			}
+				p = (p * 10), j--;
+
 			_putchar('0' + (nu / p));
 
 			for (i = c - 2; i >= 1; i--)
 			{
 				j = i, p = 10;
 				while (j != 1)
-				{
-					p = (p * 10);
-					j--;
-				}
+					p = (p * 10), j--;
+
 				_putchar('0' + ((nu / p) % 10));
 
 			}
