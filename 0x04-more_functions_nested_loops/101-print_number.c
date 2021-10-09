@@ -43,4 +43,21 @@ void print_number(int n)
 		_putchar('0' + (n / 10));
 		_putchar('0' + (n % 10));
 	}
+	else if (n < -99 && n >= -999)
+	{
+		n = (n * -1);
+		_putchar(45);
+		_putchar('0' + (n / 100));
+		_putchar('0' + ((n / 10) % 10));
+		_putchar('0' + (n % 10));
+	}
+	else if (n < -999 && n >= -9999)
+	{
+		n = (n * -1);
+		_putchar(45);
+		_putchar('0' + (n / 1000));
+		_putchar('0' + ((n / 100) % 10));
+		_putchar('0' + ((n / 10) % 10));
+		_putchar('0' + (n % 10));
+	}
 }
