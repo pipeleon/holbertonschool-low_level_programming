@@ -12,23 +12,16 @@ void print_number(int n)
 	int m, c, i, j, p;
 
 	if (n == 0)
-		_putchar('0');
+		_putchar('0' + n);
 	else
 	{
 		if (n < 0)
-		{
-			n = (n * -1);
-			_putchar(45);
-		}
+			n = (n * -1), _putchar(45);
 
-		c = 0;
-		m = n;
+		c = 0, m = n;
 
 		while (m != 0)
-		{
-			m = (m / 10);
-			c++;
-		}
+			m = (m / 10), c++;
 
 		if (c == 1)
 			_putchar('0' + n);
