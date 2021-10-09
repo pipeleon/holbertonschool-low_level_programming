@@ -53,4 +53,14 @@ void print_number(int n)
 		_putchar('0' + ((n / 10) % 10));
 		_putchar('0' + (n % 10));
 	}
+	else if (n >= 1000000 && n < 10000000)
+	{
+		_putchar('0' + (n / 1000000));
+		_putchar('0' + ((n / 100000) % 10));
+		_putchar('0' + ((n / 10000) % 10));
+		_putchar('0' + ((n / 1000) % 10));
+		_putchar('0' + ((n / 100) % 10));
+		_putchar('0' + ((n / 10) % 10));
+		_putchar('0' + (n % 10));
+	}
 }
