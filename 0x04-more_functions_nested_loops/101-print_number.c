@@ -9,7 +9,10 @@
  */
 void print_number(int n)
 {
-	int m, c, i, j, p;
+	int c, i, j, p;
+	unsigned int m, nu;
+
+
 
 	if (n == 0)
 		_putchar('0' + n);
@@ -18,13 +21,13 @@ void print_number(int n)
 		if (n < 0)
 			n = (n * -1), _putchar(45);
 
-		c = 0, m = n;
+		nu = n, c = 0, m = n;
 
 		while (m != 0)
 			m = (m / 10), c++;
 
 		if (c == 1)
-			_putchar('0' + n);
+			_putchar('0' + nu);
 		else
 		{
 			j = (c - 1), p = 10;
@@ -33,7 +36,7 @@ void print_number(int n)
 				p = (p * 10);
 				j--;
 			}
-			_putchar('0' + (n / p));
+			_putchar('0' + (nu / p));
 
 			for (i = c - 2; i >= 1; i--)
 			{
@@ -43,10 +46,10 @@ void print_number(int n)
 					p = (p * 10);
 					j--;
 				}
-				_putchar('0' + ((n / p) % 10));
+				_putchar('0' + ((nu / p) % 10));
 
 			}
-			_putchar('0' + (n % 10));
+			_putchar('0' + (nu % 10));
 		}
 	}
 }
