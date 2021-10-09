@@ -9,81 +9,51 @@
  */
 void print_number(int n)
 {
-	if (n < 0)
-	{
-		n = (n * -1);
-		_putchar(45);
-	}
+	int m, c, i, j, p;
+
 	if (n == 0)
 		_putchar('0');
-	else if (n > 0 && n < 10)
-		_putchar('0' + n);
-	else if (n >= 10 && n < 100)
+	else
 	{
-		_putchar('0' + (n / 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n >= 100 && n < 1000)
-	{
-		_putchar('0' + (n / 100));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n >= 1000 && n < 10000)
-	{
-		_putchar('0' + (n / 1000));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n >= 10000 && n < 100000)
-	{
-		_putchar('0' + (n / 10000));
-		_putchar('0' + ((n / 1000) % 10));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n >= 100000 && n < 1000000)
-	{
-		_putchar('0' + (n / 100000));
-		_putchar('0' + ((n / 10000) % 10));
-		_putchar('0' + ((n / 1000) % 10));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n >= 1000000 && n < 10000000)
-	{
-		_putchar('0' + (n / 1000000));
-		_putchar('0' + ((n / 100000) % 10));
-		_putchar('0' + ((n / 10000) % 10));
-		_putchar('0' + ((n / 1000) % 10));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n >= 10000000 && n < 100000000)
-	{
-		_putchar('0' + (n / 10000000));
-		_putchar('0' + ((n / 1000000) % 10));
-		_putchar('0' + ((n / 100000) % 10));
-		_putchar('0' + ((n / 10000) % 10));
-		_putchar('0' + ((n / 1000) % 10));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n >= 100000000 && n < 1000000000)
-	{
-		_putchar('0' + (n / 100000000));
-		_putchar('0' + ((n / 10000000) % 10));
-		_putchar('0' + ((n / 1000000) % 10));
-		_putchar('0' + ((n / 100000) % 10));
-		_putchar('0' + ((n / 10000) % 10));
-		_putchar('0' + ((n / 1000) % 10));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
+		if (n < 0)
+		{
+			n = (n * -1);
+			_putchar(45);
+		}
+
+		c = 0;
+		m = n;
+
+		while (m != 0)
+		{
+			m = (m / 10);
+			c++;
+		}
+
+		if (c == 1)
+			_putchar('0' + n);
+		else
+		{
+			j = (c - 1), p = 10;
+			while (j != 1)
+			{
+				p = (p * 10);
+				j--;
+			}
+			_putchar('0' + (n / p));
+
+			for (i = c - 2; i >= 1; i--)
+			{
+				j = i, p = 10;
+				while (j != 1)
+				{
+					p = (p * 10);
+					j--;
+				}
+				_putchar('0' + ((n / p) % 10));
+
+			}
+			_putchar('0' + (n % 10));
+		}
 	}
 }
