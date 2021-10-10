@@ -1,5 +1,4 @@
 #include "main.h"
-#include <quadmath.h>
 #include <stdlib.h>
 #include <stdio.h>
 /* Task 104 0x02. C - Functions, nested loops  */
@@ -28,7 +27,6 @@ int main(void)
 		{
 			printf("%.1Lf, ", b);
 			c = b;
-			printf("(%.0Lf - %.0Lf)", a, c);
 			b = (c + a);
 			a = c;
 		}
