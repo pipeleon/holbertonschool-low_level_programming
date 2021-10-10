@@ -10,11 +10,11 @@
  */
 int main(void)
 {
-	long double a;
-	long double b;
-	long double c;
-	long double ba;
-	long double bb;
+	unsigned long a;
+	unsigned long b;
+	unsigned long c;
+	unsigned long ba;
+	unsigned long bb;
 	int i;
 
 	for (i = 1; i <= 98; i++)
@@ -27,22 +27,28 @@ int main(void)
 		}
 		else if (i != 1 && i != 98)
 		{
-			if (b >= 100000000000000000000)
+			if (i >= 90)
 			{
-				ba = (b / 1000000000);
-				bb = (b % 1000000000);
-				printf("%.0Lf%.0Lf, ", ba, bb);
+				ba = (b / 1000000);
+				bb = (b % 1000000);
+				printf("%lu%lu, ", ba, bb);
+				c = b;
+				b = (c + a);
+				a = c;
 			}
-			printf("%.0Lf, ", b);
-			c = b;
-			b = (c + a);
-			a = c;
+			else
+			{
+				printf("%lu, ", b);
+				c = b;
+				b = (c + a);
+				a = c;
+			}
 		}
 		else
 		{
 			ba = (b / 1000000000);
 			bb = (b % 1000000000);
-			printf("%.0Lf%.0Lf", ba, bb);
+			printf("%lu%lu", ba, bb);
 			putchar('\n');
 		}
 	}
