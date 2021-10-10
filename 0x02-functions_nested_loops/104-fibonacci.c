@@ -13,6 +13,8 @@ int main(void)
 	long double a;
 	long double b;
 	long double c;
+	long double ba;
+	long double bb;
 	int i;
 
 	for (i = 1; i <= 98; i++)
@@ -25,14 +27,22 @@ int main(void)
 		}
 		else if (i != 1 && i != 98)
 		{
-			printf("%.1Lf, ", b);
+			if (b >= 100000000000000000000)
+			{
+				ba = (b / 1000000000);
+				bb = (b % 1000000000);
+				printf("%.0Lf%.0Lf, ", ba, bb);
+			}
+			printf("%.0Lf, ", b);
 			c = b;
 			b = (c + a);
 			a = c;
 		}
 		else
 		{
-			printf("%.1Lf", b);
+			ba = (b / 1000000000);
+			bb = (b % 1000000000);
+			printf("%.0Lf%.0Lf", ba, bb);
 			putchar('\n');
 		}
 	}
