@@ -7,7 +7,7 @@
  * Description: Prints a string
  * Return: void
  */
-void _puts(char *str);
+void _puts(char *str)
 {
 	int i;
 
