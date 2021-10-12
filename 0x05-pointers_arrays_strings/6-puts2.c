@@ -2,7 +2,7 @@
 /* Task 6 0x05. C - Pointers, arrays and strings  */
 
 /**
- * _puts2 - Prinst a string
+ * puts2 - Prinst a string
  * @str: String to print
  * Description: Prints a string
  * Return: void
