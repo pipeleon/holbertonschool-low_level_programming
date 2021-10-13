@@ -17,7 +17,7 @@ int main(void)
 	char n[] = "0123456789";
 	char lo[] = "abcdefghijklmnoqprstuvwyzx";
 	char up[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
-	char password[8];
+	char password[12];
 
 	srand((unsigned int)(time(NULL)));
 
@@ -25,7 +25,7 @@ int main(void)
 
 	random = rand() % 4;
 
-	for (i = 0; i < 8; i++)
+	for (i = 0; i < 12; i++)
 	{
 		if (random == 1)
 		{
