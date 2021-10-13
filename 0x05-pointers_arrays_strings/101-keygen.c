@@ -14,35 +14,32 @@ int main(void)
 {
 	int i;
 	int random;
-	char n[10];
-	char lo[26];
-	char up[26];
+	char n[] = "0123456789";
+	char lo[] = "abcdefghijklmnoqprstuvwyzx";
+	char up[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
 	char password[8];
 
 	srand((unsigned int)(time(NULL)));
 
 	random = 0;
-	n[] = "0123456789";
-	lo[] = "abcdefghijklmnoqprstuvwyzx";
-	up[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
 
 	random = rand() % 4;
 
 	for (i = 0; i < 8; i++)
 	{
-		if (randomizer == 1)
+		if (random == 1)
 		{
 			password[i] = n[rand() % 10];
 			random = rand() % 4;
 			printf("%c", password[i]);
 		}
-		else if (randomizer == 2)
+		else if (random == 2)
 		{
 			password[i] = lo[rand() % 26];
 			random = rand() % 4;
 			printf("%c", password[i]);
 		}
-		else if (randomizer == 3)
+		else if (random == 3)
 		{
 			password[i] = up[rand() % 26];
 			random = rand() % 4;
