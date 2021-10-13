@@ -17,6 +17,7 @@ int main(void)
 	char n[] = "0123456789";
 	char lo[] = "abcdefghijklmnoqprstuvwyzx";
 	char up[] = "ABCDEFGHIJKLMNOQPRSTUYWVZX";
+	char sym[] = "!@#$^&*?";
 	char password[12];
 
 	srand((unsigned int)(time(NULL)));
@@ -35,7 +36,7 @@ int main(void)
 		}
 		else if (random == 2)
 		{
-			password[i] = lo[rand() % 26];
+			password[i] = sym[rand() % 26];
 			random = rand() % 4;
 			printf("%c", password[i]);
 		}
