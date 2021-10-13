@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
+#include <stdlib.h>
 #include "main.h"
 /* Task 101 0x05. C - Pointers, arrays and strings  */
 
@@ -13,9 +14,9 @@ int main(void)
 {
 	int i;
 	int random;
-	char n[];
-	char lo[];
-	char up[];
+	char n[10];
+	char lo[26];
+	char up[26];
 	char password[8];
 
 	srand((unsigned int)(time(NULL)));
