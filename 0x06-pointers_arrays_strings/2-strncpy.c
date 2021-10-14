@@ -28,11 +28,11 @@ char *_strncpy(char *dest, char *src, int n)
 		for (i = 0; i < n; i++)
 			dest[i] = src[i];
 	}
-	else
+	else if (n >= l)
 	{
 		for (i = 0; i <= l; i++)
 			dest[i] = src[i];
-		for (i = l + 1; i < m - 7; i++)
+		for (i = l + 1; i < n; i++)
 			dest[i] = '\0';
 	}
 
