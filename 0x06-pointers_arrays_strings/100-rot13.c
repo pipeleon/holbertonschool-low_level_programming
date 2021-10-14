@@ -11,15 +11,10 @@ char *rot13(char *a)
 {
 	int i;
 	int j;
-	int l;
 	char let[52] = "abcdefghijklmnopqrstuvwxyzABCDEFGJIJKLMNOPQRSTUVWXYZ";
 	char rot[52] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGJIJKLM";
 
-	l = 0;
-	while (a[l] != '\0')
-		l++;
-
-	for (i = 0; i < l; i++)
+	for (i = 0; a[i] != '\0'; i++)
 		for (j = 0; j < 52; j++)
 			if (a[i] == let[j])
 			{

@@ -11,15 +11,10 @@ char *leet(char *a)
 {
 	int i;
 	int j;
-	int l;
 	char let[10] = "aAeEoOtTlL";
 	char num[10] = "4433007711";
 
-	l = 0;
-	while (a[l] != '\0')
-		l++;
-
-	for (i = 0; i < l; i++)
+	for (i = 0; a[i] != '\0'; i++)
 		for (j = 0; j < 10; j++)
 			if (a[i] == let[j])
 				a[i] = num[j];
