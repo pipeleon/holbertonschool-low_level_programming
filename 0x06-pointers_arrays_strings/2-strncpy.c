@@ -25,15 +25,15 @@ char *_strncpy(char *dest, char *src, int n)
 		m++;
 	if (n < l)
 	{
-		for (i = 0; i <= n - 1; i++)
+		for (i = 0; i < n; i++)
 			dest[i] = src[i];
 	}
 	else
 	{
 		for (i = 0; i <= l; i++)
 			dest[i] = src[i];
-		for (i = l + 1; i <= m - 1; i++)
-			dest[i] = '\0';
+		/* for (i = l + 1; i < m; i++)
+		   dest[i] = '\0'; */
 	}
 
 	p = dest;
