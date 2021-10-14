@@ -28,10 +28,7 @@ char *cap_string(char *a)
 		else if (a[i] == 9 || a[i] == 11)
 		{
 			if (a[i + 1] >= 97 && a[i + 1] <= 122)
-			{
-				a[i] = 32;
 				a[i + 1] = a[i + 1] - 32;
-			}
 		}
 		else
 		{
