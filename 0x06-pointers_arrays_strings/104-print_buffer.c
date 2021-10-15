@@ -30,7 +30,7 @@ void print_buffer(char *b, int size)
 			}
 			for (j = 0; j < 10 - k; j++)
 			{
-				if (b[i + j] >= 0 && b[i + j] <= 10)
+				if (b[i + j] >= 0 && b[i + j] <= 31)
 					printf(".");
 				else
 					printf("%c", b[i + j]);
