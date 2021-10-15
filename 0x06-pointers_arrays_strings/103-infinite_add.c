@@ -38,10 +38,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			{
 				rf = n1[i] + cont;
 				if (rf > 57)
-				{
-					r[i] = rf - 10;
-					cont = 1, i--;
-				}
+					r[i] = rf - 10,	cont = 1, i--;
 				else
 					r[i] = rf, cont = 0, i--;
 			}
@@ -53,20 +50,15 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 			else
 			{
 				for (i = l; i >= 1; i--)
-				{
 					r[i] = r[i - 1];
-				}
 				r[0] = 49;
 			}
 		}
 		if (size_r > l + 1)
-			for (i = l + 1; i < size_r; i ++)
+			for (i = l + 1; i < size_r; i++)
 				r[i] = 0;
 	}
 	else
-	{
 		r = rp;
-	}
-
 	return (r);
 }
