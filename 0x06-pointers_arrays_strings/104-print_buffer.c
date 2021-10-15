@@ -11,9 +11,9 @@
  */
 void print_buffer(char *b, int size)
 {
-	int i, j, k;
+	int i, j;
 
-	i = 0, k = 0;
+	i = 0;
 	if (size > 0)
 	{
 		while (i <= size)
@@ -28,19 +28,9 @@ void print_buffer(char *b, int size)
 				if (j % 2 != 0)
 					printf(" ");
 			}
-			if (k == 1)
+			for (j = 0; j < 10; j++)
 			{
-				for (j = 0; i + j < size; j++)
-				{
-					if ((b[i + j] >= 0 && b[i + j] <= 31) || b[i + j] == 127)
-						printf(".");
-					else
-						printf("%c", b[i + j]);
-				}
-			}
-			else
-			{
-				for (j = 0; j < 10; j++)
+				if (i + j < size)
 				{
 					if ((b[i + j] >= 0 && b[i + j] <= 31) || b[i + j] == 127)
 						printf(".");
@@ -50,8 +40,6 @@ void print_buffer(char *b, int size)
 			}
 			putchar('\n');
 			i = i + 10;
-			if (size - i < 10)
-				k = 1;
 		}
 	}
 	else
