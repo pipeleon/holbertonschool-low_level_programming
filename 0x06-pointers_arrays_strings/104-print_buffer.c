@@ -32,7 +32,7 @@ void print_buffer(char *b, int size)
 			{
 				for (j = 0; i + j < size; j++)
 				{
-					if ((b[i + j] >= 0 && b[i + j] <= 31))
+					if ((b[i + j] >= 0 && b[i + j] <= 31) || b[i + j] == 127)
 						printf(".");
 					else
 						printf("%c", b[i + j]);
@@ -42,7 +42,7 @@ void print_buffer(char *b, int size)
 			{
 				for (j = 0; j < 10; j++)
 				{
-					if ((b[i + j] >= 0 && b[i + j] <= 31))
+					if ((b[i + j] >= 0 && b[i + j] <= 31) || b[i + j] == 127)
 						printf(".");
 					else
 						printf("%c", b[i + j]);
