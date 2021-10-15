@@ -28,17 +28,30 @@ void print_buffer(char *b, int size)
 				if (j % 2 != 0)
 					printf(" ");
 			}
-			for (j = 0; j < 10 - k; j++)
+			if (k == 1)
 			{
-				if ((b[i + j] >= 0 && b[i + j] <= 31) || b[i + j] == 127)
-					printf(".");
-				else
-					printf("%c", b[i + j]);
+				for (j = 0; i + j < size; j++)
+				{
+					if ((b[i + j] >= 0 && b[i + j] <= 31))
+						printf(".");
+					else
+						printf("%c", b[i + j]);
+				}
+			}
+			else
+			{
+				for (j = 0; j < 10; j++)
+				{
+					if ((b[i + j] >= 0 && b[i + j] <= 31))
+						printf(".");
+					else
+						printf("%c", b[i + j]);
+				}
 			}
 			putchar('\n');
 			i = i + 10;
 			if (size - i < 10)
-				k = size - 2 - i;
+				k = 1;
 		}
 	}
 	else
