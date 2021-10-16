@@ -12,7 +12,7 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int l, m, i, j;
+	int l, m, i, j, k;
 	char cont, rf;
 	char *rp;
 
@@ -27,21 +27,14 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		while (i >= 0)
 		{
 			if (j >= 0)
-			{
-				rf = n1[i] + n2[j] + cont - 48;
-				if (rf > 57)
-					r[i] = rf - 10, cont = 1, j--, i--;
-				else
-					r[i] = rf, cont = 0, j--, i--;
-			}
+				k = 1;
 			else
-			{
-				rf = n1[i] + cont;
-				if (rf > 57)
-					r[i] = rf - 10,	cont = 1, i--;
-				else
-					r[i] = rf, cont = 0, i--;
-			}
+				k = 0;
+			rf = n1[i] + (n2[j] * k) + cont - (48 * k);
+			if (rf > 57)
+				r[i] = rf - 10, cont = 1, j--, i--;
+			else
+				r[i] = rf, cont = 0, j--, i--;
 		}
 		if (cont == 1)
 		{
