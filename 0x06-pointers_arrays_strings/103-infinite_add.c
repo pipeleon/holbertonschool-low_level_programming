@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 /* Task 103 0x06. C - More pointers, arrays and strings  */
 
@@ -12,15 +13,16 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int l, m, i, j, k;
+	int l, m, i, j, k, pl, pm;
 	char cont, rf;
 	char *rp;
 
-	l = 0, m = 0;
+	l = 0, m = 0, pl = sizeof(n1), pm = sizeof(n2);
 	while (n1[l] != '\0')
 		l++;
 	while (n2[m] != '\0')
 		m++;
+	printf("l = %d pl = %d m = %d pm = %d", l, pl, m, pm);
 	i = l - 1, j = m - 1, cont = 0, rp = 0;
 	if (size_r > l && size_r > m)
 	{
