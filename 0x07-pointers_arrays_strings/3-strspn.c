@@ -39,6 +39,8 @@ unsigned int _strspn(char *s, char *accept)
 						k = 0;
 				}
 			}
+			else
+				k = 0;
 		}
 	}
 	return (cont);
