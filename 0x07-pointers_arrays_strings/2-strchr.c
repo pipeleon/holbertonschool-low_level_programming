@@ -22,10 +22,10 @@ char *_strchr(char *s, char c)
 		i++;
 	}
 
-	/*if (s[i] == '\0')
+	if (s[i] == '\0')
 		p = 0;
-		else*/
-	p = &s[i];
+	else
+		p = &s[i];
 
 	return (p);
 }
