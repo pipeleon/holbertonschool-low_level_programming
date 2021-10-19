@@ -21,7 +21,7 @@ unsigned int _strspn(char *s, char *accept)
 
 	cont = 0;
 	k = 1;
-	if (m > 0)
+	if (m > 1)
 	{
 		while (k != 0)
 		{
