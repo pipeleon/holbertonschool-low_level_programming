@@ -26,6 +26,6 @@ char *_strchr(char *s, char c)
 		p = 0;
 	else
 		p = &s[i];
-	
+
 	return (p);
 }
