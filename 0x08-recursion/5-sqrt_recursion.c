@@ -1,6 +1,13 @@
 #include "main.h"
 /* Task 5 0x08. C - Recursion  */
 
+/**
+ * _sqrt - Returns the natural square root
+ * @a: Number to search
+ * @n: Number to find sqrt
+ * Description: Returns the natural square root
+ * Return: int
+ */
 int _sqrt(int a, int n)
 {
 	int m;
@@ -8,9 +15,9 @@ int _sqrt(int a, int n)
 	m = a;
 
 	if (m * m <= n && (m + 1) * (m + 1) > n)
-		return m;
+		return (m);
 	else
-		return _sqrt((m + 1), n);
+		return (_sqrt((m + 1), n));
 }
 
 
@@ -30,7 +37,7 @@ int _sqrt_recursion(int n)
 	{
 		sq = _sqrt(2, n);
 		if (sq * sq == n)
-			return sq;
+			return (sq);
 		else
 			return (-1);
 	}
