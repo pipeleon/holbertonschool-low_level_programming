@@ -33,12 +33,10 @@ int _sqrt_recursion(int n)
 
 	if (n == 1)
 		return (1);
+
+	sq = _sqrt(2, n);
+	if (sq * sq == n)
+		return (sq);
 	else
-	{
-		sq = _sqrt(2, n);
-		if (sq * sq == n)
-			return (sq);
-		else
-			return (-1);
-	}
+		return (-1);
 }
