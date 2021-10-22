@@ -3,6 +3,8 @@
 
 /**
  * main - Print the name of file
+ * @argc: Count of the arguments supplied to the program
+ * @argv: Array of pointers to the strings which are those arguments
  * Description: Print the name of file
  * Return: int
  */
