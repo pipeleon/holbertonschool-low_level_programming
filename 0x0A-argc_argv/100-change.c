@@ -62,7 +62,10 @@ int main(int argc, char **argv)
 
 
 	if (argc != 2)
-		printf("Error\n"), return (1);
+	{
+		printf("Error\n");
+		return (1);
+	}
 	c = 0;
 	t = _atoi(argv[1]);
 	if (_atoi(argv[1]) < 0)
@@ -70,11 +73,7 @@ int main(int argc, char **argv)
 	else
 	{
 		if (t >= 25)
-		{
-			c += t / 25;
-			temp = t;
-			t = temp % 25;
-		}
+			c += t / 25, temp = t, t = temp % 25;
 		if (t >= 10)
 		{
 			c += t / 10;
