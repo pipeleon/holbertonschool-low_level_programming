@@ -75,7 +75,10 @@ int main(int argc, char *argv[])
 				w = 1;
 		}
 		if (w == 1)
+		{
 			printf("Error\n");
+			return (1);
+		}
 		else
 			printf("%d\n", sum);
 	}
