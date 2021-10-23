@@ -66,7 +66,7 @@ int _isnum(char *s)
 	while (s[i] != '\0' && res == 1)
 	{
 		res = 1;
-		if (s[i] < 48 && s[i] > 57)
+		if (s[i] < 48 || s[i] > 57)
 		{
 			res = 0;
 			break;
