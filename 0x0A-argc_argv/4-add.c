@@ -49,6 +49,35 @@ int _atoi(char *s)
 	return (a);
 }
 
+
+/**
+ * _isnum - checks if a string is a number
+ * @s: Strin
+ * Description: checks uf a string is a number
+ * Return: int
+ */
+
+int _isnum(char *s)
+{
+	int i, res;
+
+	i = 0;
+	res = 0;
+	while (s[i] != '\0' && res == 1)
+	{
+		res = 1;
+		if (s[i] < 48 && s[i] > 57)
+		{
+			res = 0;
+			break;
+		}
+		i++;
+	}
+
+	return (res);
+}
+
+
 /**
  * main - multiplies two numbers
  * @argc: Count of the arguments supplied to the program
@@ -69,7 +98,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (**(argv + i) >= 48 && **(argv + i) <= 57)
+			if (_isnum(argv[i]) == 1)
 				sum += _atoi(argv[i]);
 			else
 				w = 1;
