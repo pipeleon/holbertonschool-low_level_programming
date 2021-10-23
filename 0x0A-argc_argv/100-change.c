@@ -93,7 +93,7 @@ int main(int argc, char **argv)
 			t = temp % 2;
 		}
 		c += t;
+		printf("%d\n", c);
 	}
-	printf("%d\n", c);
 	return (0);
 }
