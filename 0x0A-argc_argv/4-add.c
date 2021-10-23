@@ -62,7 +62,7 @@ int _isnum(char *s)
 	int i, res;
 
 	i = 0;
-	res = 0;
+	res = 1;
 	while (s[i] != '\0' && res == 1)
 	{
 		res = 1;
