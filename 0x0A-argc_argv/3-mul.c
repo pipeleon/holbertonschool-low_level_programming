@@ -60,11 +60,16 @@ int main(int argc __attribute__((unused)), char **argv)
 {
 	int a, b, mul;
 
-	a = _atoi(argv[1]);
-	b = _atoi(argv[2]);
+	if (argv[1] != 0 && argv[2] != 0)
+	{
+		a = _atoi(argv[1]);
+		b = _atoi(argv[2]);
 
-	mul = a * b;
+		mul = a * b;
 
-	printf("%d\n", mul);
+		printf("%d\n", mul);
+	}
+	else
+		printf("Error\n");
 	return (0);
 }
