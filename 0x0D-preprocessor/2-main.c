@@ -6,7 +6,7 @@
  *
  * Return: char
  */
-int main()
+int main(void)
 {
 	printf("%s\n", __BASE_FILE__);
 
