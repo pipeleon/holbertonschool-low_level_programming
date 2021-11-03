@@ -12,6 +12,6 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if (name != NULL && f(name) != NULL)
+	if (name != NULL)
 		f(name);
 }
