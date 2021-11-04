@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	int res;
 	char *o;
 	int num;
-	int a;
+	int a, le;
 
 	a = argc;
 	if (a != 4)
@@ -26,8 +26,16 @@ int main(int argc, char *argv[])
 
 	o = argv[2];
 	num = atoi(argv[3]);
+	le = 0;
+	while (o[le] != '\0')
+		le++;
 
 	if ((*o != '+' && *o != '-' && *o != '*' && *o != '/' && *o != '%'))
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	if (le > 1)
 	{
 		printf("Error\n");
 		exit(99);
