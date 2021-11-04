@@ -13,24 +13,29 @@
 int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
 {
 	int res;
+	char *o;
+	int num;
+
+	o = argv[2];
+	num = atoi(argv[3]);
 
 	if (argc != 4)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
-	}/*
-	if (argv[2] != "+" && argv[2] != "-" && argv[2] != "*" && argv[2] != "/" && argv[2] != "%")
+	}
+	if (*o != '+' && *o != '-' && *o != '*' && *o != '/' && *o != '%')
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(99);
 	}
-	if ((argv[2] != "/" || argv[2] != "%") && argv[3] != "0")
+	if ((*o == '/' || *o == '%') && num == 0)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(100);
-		}*/
+	}
 
-	res = (*get_op_func("+"))(2, 3);
+	res = (*get_op_func(argv[2]))(atoi(argv[1]), atoi(argv[3]));
 
 	printf("%d\n", res);
 	return (0);
