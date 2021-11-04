@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 	o = argv[2];
 	num = atoi(argv[3]);
-	len = 0;
+	le = 0;
 	while (o[le] != '\0')
 		le++;
 
