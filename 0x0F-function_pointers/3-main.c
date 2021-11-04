@@ -27,16 +27,12 @@ int main(int argc, char *argv[])
 	o = argv[2];
 	num = atoi(argv[3]);
 
-	if ((*o != '+' && *o != '-' && *o != '*' && *o != '/' && *o != '%'))
+	if ((*o != '+' && *o != '-' && *o != '*' && *o != '/' && *o != '%') || o[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	if (o[1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
+	
 	if ((*o == '/' || *o == '%') && num == 0)
 	{
 		printf("Error\n");
