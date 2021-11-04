@@ -15,16 +15,22 @@ int main(int argc, char *argv[])
 	int res;
 	char *o;
 	int num;
+	int a, le;
 
-	o = argv[2];
-	num = atoi(argv[3]);
-
-	if (argc != 4)
+	a = argc;
+	if (a != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (*o != '+' && *o != '-' && *o != '*' && *o != '/' && *o != '%')
+
+	o = argv[2];
+	num = atoi(argv[3]);
+	len = 0;
+	while (o[le] != '\0')
+		le++;
+
+	if ((*o != '+' && *o != '-' && *o != '*' && *o != '/' && *o != '%') || le > 1)
 	{
 		printf("Error\n");
 		exit(99);
