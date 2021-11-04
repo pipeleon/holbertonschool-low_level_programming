@@ -10,7 +10,7 @@
  *
  * Return: int
  */
-int main(int argc __attribute__((unused)), char *argv[] __attribute__((unused)))
+int main(int argc, char *argv[])
 {
 	int res;
 	char *o;
