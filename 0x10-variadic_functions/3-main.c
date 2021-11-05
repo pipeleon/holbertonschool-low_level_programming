@@ -8,6 +8,6 @@
  */
 int main(void)
 {
-	print_all("ceisfdss", 'B', 3, "stSchool", 4.3, 5.8, NULL, "ahorasi");
+	print_all("qwertyuopadghjklzxvbnm");
 	return (0);
 }
