@@ -11,20 +11,16 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int i;
-	int len, p, z;
+	int i, len, p, z;
 	char c;
 	char *str;
 	float f;
 	double d;
 
 	va_start(ap, format);
-
-	len = 0;
+	len = 0, p = 0;
 	while (format[len] != '\0')
 		len++;
-
-	p = 0;
 	while (p < len)
 	{
 		z = 0;
@@ -57,7 +53,10 @@ void print_all(const char * const format, ...)
 		case 's':
 		{
 			str = va_arg(ap, char *);
-			printf("%s", str);
+			if (str != NULL)
+				printf("%s", str);
+			else
+				printf("(nil)");
 			break;
 		}
 		default:
