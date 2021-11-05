@@ -46,13 +46,12 @@ void print_all(const char * const format, ...)
 		}
 		case 'd':
 		{
-			if (va_arg(ap, double) == '\0')
+			/*if (va_arg(ap, double) == '\0')
 			{
 				z = 1;
 				break;
-			}
+				}*/
 			d = va_arg(ap, double),	printf("%f", d);
-			
 			break;
 		}
 		case 's':
@@ -69,13 +68,8 @@ void print_all(const char * const format, ...)
 			break;
 		}
 		}
-		switch (z)
-		{
-		case 0:
+		if (p != len - 1 && z != 1)
 			printf(", ");
-		default:
-			break;
-		}
 		p++;
 	}
 
