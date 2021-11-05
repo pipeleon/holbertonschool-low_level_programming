@@ -11,13 +11,13 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int i, len, p, z;
+	int i, p, z;
 	char c;
 	char *str;
 	float f;
 	double d;
 
-	len = 0, p = 0, z = 0;
+	p = 0, z = 0;
 	while (format != NULL && z == 0)
 	{
 		va_start(ap, format);
@@ -67,9 +67,9 @@ void print_all(const char * const format, ...)
 				break;
 			}
 			}
-			if (p != len - 1 && z != 1)
-				printf(", ");
 			p++;
+			if (format[p] != '\0' && z != 1)
+				printf(", ");
 		}
 		z = 1;
 	}
