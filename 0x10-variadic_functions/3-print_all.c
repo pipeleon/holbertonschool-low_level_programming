@@ -46,10 +46,13 @@ void print_all(const char * const format, ...)
 		}
 		case 'd':
 		{
-			if (va_arg(ap, double) != '\0')
-				d = va_arg(ap, double),	printf("%f", d);
-			else
+			if (va_arg(ap, double) == '\0')
+			{
 				z = 1;
+				break;
+			}
+			d = va_arg(ap, double),	printf("%f", d);
+			
 			break;
 		}
 		case 's':
