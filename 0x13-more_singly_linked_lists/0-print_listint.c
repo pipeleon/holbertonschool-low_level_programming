@@ -2,12 +2,12 @@
 /* Task 0 0x12. C - Singly linked lists  */
 
 /**
- * print_list - rints all the elements of a list_t list
+ * print_listint - prints all the elements of a list_t list
  * @h: List
  *
  * Return: size_t
  */
-size_t print_list(const list_t *h)
+size_t print_listint(const listint_t *h);
 {
 	int i;
 
