@@ -15,10 +15,14 @@ int pop_listint(listint_t **head)
 	if (*head == NULL)
 		return (0);
 
+	temp = malloc(sizeof(listint_t));
+	if (temp == NULL)
+		return (0);
+
 	i = (*head)->n;
 
 	temp = (*head)->next;
 	*head = temp;
-
+	
 	return (i);
 }
