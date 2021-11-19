@@ -47,6 +47,8 @@ int get_bit(unsigned long int n, unsigned int index)
 		p = p * 2;
 		cont++;
 		j++;
+		if (cont == 64)
+			break;
 	}
 
 	j--;
