@@ -32,8 +32,7 @@ void print_binary(unsigned long int n)
 	int i, cont;
 	unsigned long int temp, p;
 
-	printf("%lu\n", n);
-
+	
 	if (n == 0)
 	{
 		_putchar(48);
