@@ -39,7 +39,7 @@ void print_binary(unsigned long int n)
 	}
 
 	p = 1, cont = 0;
-	while (n >= p && cont < 22 )
+	while (n >= p && cont < 22)
 	{
 		p = p * 2;
 		cont++;
