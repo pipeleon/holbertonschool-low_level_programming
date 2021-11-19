@@ -32,6 +32,8 @@ void print_binary(unsigned long int n)
 	int i, cont;
 	unsigned long int temp, p;
 
+	printf("%lu\n", n);
+
 	if (n == 0)
 	{
 		_putchar(48);
@@ -43,6 +45,8 @@ void print_binary(unsigned long int n)
 	{
 		p = p * 2;
 		cont++;
+		if (cont == 64)
+			break;
 	}
 
 	for (i = cont - 1; i >= 0; i--)
