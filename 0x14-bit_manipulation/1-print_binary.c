@@ -32,7 +32,7 @@ void print_binary(unsigned long int n)
 	int i, cont;
 	unsigned long int temp, p;
 
-	
+
 	if (n == 0)
 	{
 		_putchar(48);
