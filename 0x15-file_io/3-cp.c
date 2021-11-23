@@ -1,0 +1,59 @@
+#include "main.h"
+
+/**
+ * main - copy
+ *
+ * Return: Always 0.
+ */
+int main(int ac, char **av)
+{
+	int fd, fd2, cl;
+	int cont;
+	char bf[1024];
+
+	if (ac != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+
+	fd = open(av[1], O_RDONLY);
+
+	if (fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
+	}
+
+	cont = 0;
+	while (av[1][cont] != '\0')
+		cont++;
+
+	read(fd, bf, 1024);
+
+	cl = close(fd);
+	if (cl == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+
+	fd2 = open(av[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
+
+	if (fd2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+		exit(99);
+	}
+
+	write(fd2, bf, cont);
+
+	cl = close(fd2);
+	if (cl == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd2);
+		exit(100);
+	}
+
+	return (0);
+}
