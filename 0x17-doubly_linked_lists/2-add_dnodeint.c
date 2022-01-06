@@ -1,23 +1,33 @@
 #include "lists.h"
-/* Task 1 0x17. C - Doubly linked lists  */
+/* Task 2 0x17. C - Doubly linked lists  */
 
 /**
- * dlistint_len - Prints the number of elements in a double linked list
- * @h: List
+ * add_dnodeint - adds a new node at the beginning of a dlistint_t list
+ * @head: List
+ * @n: new int
  *
- * Return: size_t
+ * Return: dlisint_t
  */
-size_t dlistint_len(const dlistint_t *h)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	int i;
+	dlistint_t *new;
 
-	i = 0;
-	if (h != NULL)
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	if (*head == NULL)
 	{
-		if (h->next != NULL)
-			i += dlistint_len(h->next);
-		i++;
+		new->next = NULL;
+		new->prev = NULL;
 	}
+	else
+	{
+		new->next = *head;
+		new->prev = NULL;
+		(*head)->prev = new;
+	}
+	*head = new;
 
-	return (i);
+	return (new);
 }
