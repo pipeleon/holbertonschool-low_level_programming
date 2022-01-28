@@ -120,9 +120,10 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		tmp = ht->array[index];
+		
 		while (tmp)
 		{
-			if (_strcmp(tmp->key, (char *)key) == 0)
+			if (strcmp(tmp->key, (char *)key) == 0)
 			{
 				free(tmp->value);
 				tmp->value = strdup(value);
@@ -131,12 +132,20 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			}
 			tmp = tmp->next;
 		}
+		
 		tmp = ht->array[index];		
 		new->key = strdup(key);
 		new->value = strdup(value);
 		
-		cmp = tmp->key[1];
-		cmp2 = key[1];
+		if (tmp->key[1] == '\0')
+			cmp = 0;
+		else
+			cmp = tmp->key[1];
+		
+		if (key[1] == '\0')
+			cmp2 = 0;
+		else
+			cmp2 = key[1];
 		
 		if (cmp > cmp2)
 		{
@@ -174,8 +183,16 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 				else
 				{
 					tmp = tmp->next;
-					cmp = tmp->key[1];
-					cmp2 = key[1];
+					if (tmp->key[1] == '\0')
+						cmp = 0;
+					else
+						cmp = tmp->key[1];
+		
+					if (key[1] == '\0')
+						cmp2 = 0;
+					else
+						cmp2 = key[1];
+					
 					if (cmp > cmp2)
 					{
 						tmp2 = tmp->sprev;
@@ -246,7 +263,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
  */
 void shash_table_print(const shash_table_t *ht)
 {
-    unsigned long int i;
+    /*unsigned long int i;*/
 	shash_node_t *tmp;
 	int flag = 0;
 
@@ -254,7 +271,15 @@ void shash_table_print(const shash_table_t *ht)
 		return;
 
 	printf("{");
-	for (i = 0; i < ht->size; i++)
+	tmp = ht->shead;
+	while (tmp)
+	{
+		if (flag != 0)
+			printf(", ");
+		printf("'%s': '%s'", tmp->key, tmp->value);
+		tmp = tmp->snext, flag = 1;		
+	}
+	/*for (i = 0; i < ht->size; i++)
 	{
 		tmp = ht->array[i];
 		while (tmp)
@@ -264,7 +289,7 @@ void shash_table_print(const shash_table_t *ht)
 			printf("'%s': '%s'", tmp->key, tmp->value);
 			tmp = tmp->next, flag = 1;
 		}
-	}
+	}*/
 	printf("}\n");
 }
 

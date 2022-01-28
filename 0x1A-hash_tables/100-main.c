@@ -13,23 +13,34 @@ int main(void)
     shash_table_t *ht;
 
     ht = shash_table_create(1024);
-    shash_table_set(ht, "ya", "0");
+    shash_table_set(ht, "h", "0");
     shash_table_print(ht);
-    shash_table_set(ht, "yo", "1");
+    
+    shash_table_set(ht, "f", "1");
     shash_table_print(ht);
-    shash_table_set(ht, "yu", "1");
+    
+    shash_table_set(ht, "k", "1");
     shash_table_print(ht);
-    shash_table_set(ht, "ja", "2");
+    
+    shash_table_set(ht, "ku", "2");
     shash_table_print(ht);
-    shash_table_set(ht, "je", "3");
+    
+    shash_table_set(ht, "yu", "3");
     shash_table_print(ht);
+    
     shash_table_set(ht, "z", "4");
     shash_table_print(ht);
-    shash_table_set(ht, "n", "5");
+    
+    shash_table_set(ht, "zu", "5");
     shash_table_print(ht);
+    
     shash_table_set(ht, "a", "6");
     shash_table_print(ht);
+    
     shash_table_set(ht, "m", "7");
+    shash_table_print(ht);
+
+    shash_table_set(ht, "mu", "7");
     shash_table_print(ht);
     shash_table_print_rev(ht);
     shash_table_delete(ht);
