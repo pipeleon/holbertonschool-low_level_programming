@@ -13,13 +13,13 @@ int main(void)
     shash_table_t *ht;
 
     ht = shash_table_create(1024);
-    shash_table_set(ht, "h", "0");
+    shash_table_set(ht, "h", "");
     shash_table_print(ht);
     
-    shash_table_set(ht, "f", "1");
+    shash_table_set(ht, "hell", "");
     shash_table_print(ht);
     
-    shash_table_set(ht, "k", "1");
+    shash_table_set(ht, "he", "1");
     shash_table_print(ht);
     
     shash_table_set(ht, "ku", "2");
@@ -34,7 +34,7 @@ int main(void)
     shash_table_set(ht, "zu", "5");
     shash_table_print(ht);
     
-    shash_table_set(ht, "a", "6");
+    shash_table_set(ht, "zula", "6");
     shash_table_print(ht);
     
     shash_table_set(ht, "m", "7");

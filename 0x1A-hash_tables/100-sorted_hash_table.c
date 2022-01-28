@@ -51,6 +51,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  */
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
+	int i;
     unsigned long int index, cmp, cmp2;
 	shash_node_t *new, *tmp, *tmp2;
 
@@ -136,16 +137,31 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		tmp = ht->array[index];		
 		new->key = strdup(key);
 		new->value = strdup(value);
+		i = 1;
+		while (1)
+		{
+			if (tmp->key[i] == '\0')
+				cmp = 0;
+			else
+				cmp = tmp->key[i];
+
+			if (key[i] == '\0')
+				cmp2 = 0;
+			else
+				cmp2 = key[i];
+			
+			if (cmp == cmp2)
+				i++;
+			else if (cmp2 > cmp)
+			{
+				if (tmp->next == NULL)
+					break;
+				tmp = tmp->next;
+			}
+			else
+				break;
+		}
 		
-		if (tmp->key[1] == '\0')
-			cmp = 0;
-		else
-			cmp = tmp->key[1];
-		
-		if (key[1] == '\0')
-			cmp2 = 0;
-		else
-			cmp2 = key[1];
 		
 		if (cmp > cmp2)
 		{
@@ -162,51 +178,32 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		else
 		{
-			while (1)
+			if (tmp->next == NULL)
 			{
-				if (tmp->next == NULL)
+				tmp->next = new;
+				new->next = NULL;
+				new->sprev = tmp;
+				tmp2 = tmp->snext;
+				tmp->snext = new;
+				if (tmp2)
 				{
-					tmp->next = new;
-					new->next = NULL;
-					new->sprev = tmp;
-					tmp2 = tmp->snext;
-					tmp->snext = new;
-					if (tmp2)
-					{
-						new->snext = tmp2;
-						tmp2->sprev = new;
-					}
-					if (ht->stail == tmp)
-						ht->stail = new;
-					break;
+					new->snext = tmp2;
+					tmp2->sprev = new;
 				}
-				else
-				{
-					tmp = tmp->next;
-					if (tmp->key[1] == '\0')
-						cmp = 0;
-					else
-						cmp = tmp->key[1];
-		
-					if (key[1] == '\0')
-						cmp2 = 0;
-					else
-						cmp2 = key[1];
-					
-					if (cmp > cmp2)
-					{
-						tmp2 = tmp->sprev;
-						new->sprev = tmp->sprev;
-						new->snext = tmp;
-						new->next = tmp;
-						tmp->sprev = new;
-						tmp2->snext = new;
-						tmp2->next = new;
-						break;
-					}
-				}
+				if (ht->stail == tmp)
+					ht->stail = new;
+				
 			}
-			
+			else
+			{
+				tmp2 = tmp->sprev;
+				new->sprev = tmp->sprev;
+				new->snext = tmp;
+				new->next = tmp;
+				tmp->sprev = new;
+				tmp2->snext = new;
+				tmp2->next = new;
+			}
 		}
 	}
 	return (1);
