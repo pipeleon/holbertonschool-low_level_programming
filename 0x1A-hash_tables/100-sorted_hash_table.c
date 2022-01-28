@@ -131,19 +131,62 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			}
 			tmp = tmp->next;
 		}
+		tmp = ht->array[index];		
 		new->key = strdup(key);
 		new->value = strdup(value);
-        while (tmp->next != NULL)
-            tmp = tmp->next;
-        tmp2 = tmp->snext;
-        new->sprev = tmp;
-        new->snext = tmp2;
-        tmp->snext = new;
-		tmp2->sprev = new;
-        tmp->next = new;
-        new->next = NULL;
-	}
 
+		cmp = tmp->key[1];
+		cmp2 = key[1];
+		
+		if (cmp > cmp2)
+		{
+			tmp2 = tmp->sprev;
+			new->sprev = tmp->sprev;
+			new->snext = tmp;
+			new->next = tmp;
+			tmp->sprev = new;
+			if (tmp2)
+				tmp2->snext = new;
+			if (ht->shead == tmp)
+				ht->shead = new;
+			ht->array[index]= new;
+		}
+		else
+		{
+			while (1)
+			{
+				if (tmp->next == NULL)
+				{
+					tmp->next = new;
+					new->next = NULL;
+					new->sprev = tmp;
+					tmp2 = tmp->snext;
+					tmp->snext = new;
+					new->snext = tmp2;
+					tmp2->sprev = new;
+					break;
+				}
+				else
+				{
+					tmp = tmp->next;
+					cmp = tmp->key[1];
+					cmp2 = key[1];
+					if (cmp > cmp2)
+					{
+						tmp2 = tmp->sprev;
+						new->sprev = tmp->sprev;
+						new->snext = tmp;
+						new->next = tmp;
+						tmp->sprev = new;
+						tmp2->snext = new;
+						tmp2->next = new;
+						break;
+					}
+				}
+			}
+			
+		}
+	}
 	return (1);
 }
 
