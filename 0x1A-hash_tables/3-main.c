@@ -25,5 +25,6 @@ int main(void)
     hash_table_set(ht, "hetairas", "col");
     printf("%s : %s\n", ht->array[278]->key, ht->array[278]->value);
     printf("%s : %s\n", ht->array[278]->next->key, ht->array[278]->next->value);
+    hash_table_delete(ht);
     return (EXIT_SUCCESS);
 }

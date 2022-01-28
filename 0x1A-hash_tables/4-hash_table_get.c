@@ -5,41 +5,41 @@
  * hash_table_get - retrieves a value associated with a key
  * @ht: Hash table
  * @key: Key
- * 
+ *
  * Return: Value
  */
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-    char *value;
-    unsigned long int index;
-    hash_node_t *tmp;
+	char *value;
+	unsigned long int index;
+	hash_node_t *tmp;
 
-    if (ht == NULL || key == NULL)
-    {
-        return (NULL);
-    }
-    
-    if (key[0] == '\0')
-    {
-        return (NULL);
-    }
+	if (ht == NULL || key == NULL)
+	{
+		return (NULL);
+	}
 
-    index = key_index((unsigned char *)key, ht->size);
+	if (key[0] == '\0')
+	{
+		return (NULL);
+	}
 
-    tmp = ht->array[index];
+	index = key_index((unsigned char *)key, ht->size);
 
-    if (tmp == NULL)
-        return (NULL);
-    
-    while(tmp)
-    {
-        if (_strcmp(tmp->key, (char *)key) == 0)
-        {
-            value = tmp->value;
-            return (value);
-        }
-        tmp = tmp->next;
-    }
+	tmp = ht->array[index];
 
-    return (NULL);
+	if (tmp == NULL)
+		return (NULL);
+
+	while (tmp)
+	{
+		if (_strcmp(tmp->key, (char *)key) == 0)
+		{
+			value = tmp->value;
+			return (value);
+		}
+		tmp = tmp->next;
+	}
+
+	return (NULL);
 }
