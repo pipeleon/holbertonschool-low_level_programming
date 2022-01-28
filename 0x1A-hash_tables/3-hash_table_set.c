@@ -2,6 +2,33 @@
 /* Task 1 0x1A. C - Hash tables */
 
 /**
+ * _strcmp - Compares two string
+ * @s1: Fisrt string
+ * @s2: Second string
+ * Description: Compares two strings
+ * Return: int
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i;
+	int p;
+
+	p = 0;
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+		{
+			p = s1[i] - s2[i];
+			break;
+		}
+		i++;
+	}
+
+	return (p);
+}
+
+/**
  * hash_table_set - adds an element to the hash table
  * @ht: Hash Table
  * @key: Key
@@ -12,7 +39,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
     unsigned long int index;
-    hash_node_t *new;    
+    hash_node_t *new, *tmp;    
     
     if (ht == NULL || key == NULL || value == NULL)
     {
@@ -41,6 +68,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     }
     else
     {
+        tmp = ht->array[index];
+        while (tmp)
+        {
+            if (_strcmp(tmp->key, (char *)key) == 0)
+            {
+                tmp->value = (char *)value;
+                return (1);
+            }
+            tmp = tmp->next;
+        }
         new->key = (char *)key;       
         new->value = (char *)value;       
         new->next = ht->array[index];
