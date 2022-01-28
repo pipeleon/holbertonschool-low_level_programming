@@ -241,7 +241,7 @@ char *shash_table_get(const shash_table_t *ht, const char *key)
 
 	while (tmp)
 	{
-		if (_strcmp(tmp->key, (char *)key) == 0)
+		if (strcmp(tmp->key, (char *)key) == 0)
 		{
 			value = tmp->value;
 			return (value);
@@ -324,51 +324,22 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-    unsigned long int i;
-	shash_node_t *tmp;
+    shash_node_t *tmp;
 
 	if (ht == NULL)
 		return;
 
-	for (i = 0; i < ht->size; i++)
+	tmp = ht->stail;
+	while (tmp)
 	{
-		tmp = ht->array[i];
-		while (tmp)
-		{
-			free(tmp->key);
-			free(tmp->value);
-			free(tmp);
-			tmp = tmp->next;
-		}
+		free(tmp->key);
+		free(tmp->value);
 		free(tmp);
+		tmp = tmp->sprev;
 	}
+	
 	free(ht->array);
 	free(ht);
 }
 
-/**
- * _strcmp - Compares two string
- * @s1: Fisrt string
- * @s2: Second string
- * Description: Compares two strings
- * Return: int
- */
-int _strcmp(char *s1, char *s2)
-{
-	int i;
-	int p;
 
-	p = 0;
-	i = 0;
-	while (s1[i] != '\0' && s2[i] != '\0')
-	{
-		if (s1[i] != s2[i])
-		{
-			p = s1[i] - s2[i];
-			break;
-		}
-		i++;
-	}
-
-	return (p);
-}
