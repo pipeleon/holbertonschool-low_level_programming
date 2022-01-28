@@ -155,7 +155,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		{
 			while (1)
 			{
-				printf("1\n");
 				if (tmp->next == NULL)
 				{
 					tmp->next = new;
