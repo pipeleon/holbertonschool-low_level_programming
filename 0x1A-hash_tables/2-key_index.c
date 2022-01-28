@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-/* Task 1 0x1A. C - Hash tables */
+/* Task 2 0x1A. C - Hash tables */
 
 /**
  * key_index - gives you the index of a key

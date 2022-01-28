@@ -1,5 +1,5 @@
 #include "hash_tables.h"
-/* Task 1 0x1A. C - Hash tables */
+/* Task 3 0x1A. C - Hash tables */
 
 /**
  * _strcmp - Compares two string
@@ -61,7 +61,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
     
     if (ht->array[index] == NULL)
     {        
-        new->key = (char *)key;     
+        new->key = strdup(key);     
         new->value = strdup(value);       
         new->next = NULL;
         ht->array[index] = new;
@@ -79,7 +79,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
             }
             tmp = tmp->next;
         }
-        new->key = (char *)key;       
+        new->key = strdup(key);       
         new->value = strdup(value);       
         new->next = ht->array[index];
         ht->array[index] = new;
