@@ -134,7 +134,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		tmp = ht->array[index];		
 		new->key = strdup(key);
 		new->value = strdup(value);
-
+		
 		cmp = tmp->key[1];
 		cmp2 = key[1];
 		
@@ -155,6 +155,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		{
 			while (1)
 			{
+				printf("1\n");
 				if (tmp->next == NULL)
 				{
 					tmp->next = new;
@@ -162,8 +163,13 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 					new->sprev = tmp;
 					tmp2 = tmp->snext;
 					tmp->snext = new;
-					new->snext = tmp2;
-					tmp2->sprev = new;
+					if (tmp2)
+					{
+						new->snext = tmp2;
+						tmp2->sprev = new;
+					}
+					if (ht->stail == tmp)
+						ht->stail = new;
 					break;
 				}
 				else
