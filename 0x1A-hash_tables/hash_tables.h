@@ -97,4 +97,6 @@ void shash_table_print_rev(const shash_table_t *ht);
 
 void shash_table_delete(shash_table_t *ht);
 
+int _strcmp(char *s1, char *s2);
+
 #endif

@@ -19,7 +19,7 @@ int main(void)
     shash_table_set(ht, "hell", "");
     shash_table_print(ht);
     
-    shash_table_set(ht, "he", "1");
+    shash_table_set(ht, "hell", "1");
     shash_table_print(ht);
     
     shash_table_set(ht, "ku", "2");
