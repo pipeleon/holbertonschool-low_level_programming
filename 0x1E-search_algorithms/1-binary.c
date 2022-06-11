@@ -12,58 +12,42 @@
  */
 int binary_search2(int *array, size_t a, size_t b, int value)
 {
-    size_t i, size, middle;
+	size_t i, size, middle;
 
-    printf("Searching in array: ");
-    for (i = a; i < b; i++)
-    {
-        printf("%d", array[i]);
-        if (i < b - 1)
-        {
-            printf(", ");
-        }
-    }
-    printf("\n");
+	printf("Searching in array: ");
+	for (i = a; i < b; i++)
+	{
+		printf("%d", array[i]);
+		if (i < b - 1)
+			printf(", ");
+	}
+	printf("\n");
 
-    size = b - a;
+	size = b - a;
 
-    if (size <= 1)
-    {
-        return (-1);
-    }
+	if (size <= 1)
+		return (-1);
 
-    if (size % 2 == 0)
-    {
-        middle = size / 2;
-        if (array[a + middle - 1] == value)
-        {
-            return (a + middle - 1);
-        }
-        else if (array[a + middle - 1] > value)
-        {
-            return (binary_search2(array, a, b - middle - 1, value));
-        }
-        else
-        {
-            return (binary_search2(array, a + middle, b, value));
-        }
-    }
-    else
-    {
-        middle = (size + 1) / 2;
-        if (array[a + middle] == value)
-        {
-            return (a + middle);
-        }
-        else if (array[a + middle] > value)
-        {
-            return (binary_search2(array, a, b - middle - 1, value));
-        }
-        else
-        {
-            return (binary_search2(array, a + middle, b, value));
-        }
-    }
+	if (size % 2 == 0)
+	{
+		middle = size / 2;
+		if (array[a + middle - 1] == value)
+			return (a + middle - 1);
+		else if (array[a + middle - 1] > value)
+			return (binary_search2(array, a, b - middle - 1, value));
+		else
+			return (binary_search2(array, a + middle, b, value));
+	}
+	else
+	{
+		middle = (size + 1) / 2;
+		if (array[a + middle] == value)
+			return (a + middle);
+		else if (array[a + middle] > value)
+			return (binary_search2(array, a, b - middle - 1, value));
+		else
+			return (binary_search2(array, a + middle, b, value));
+	}
 }
 
 /**
@@ -76,11 +60,10 @@ int binary_search2(int *array, size_t a, size_t b, int value)
  */
 int binary_search(int *array, size_t size, int value)
 {
-    if (array == NULL)
-    {
-        return (-1);
-    }
+	if (array == NULL)
+	{
+		return (-1);
+	}
 
-    return binary_search2(array, 0, size, value);
-    
+	return (binary_search2(array, 0, size, value));
 }
