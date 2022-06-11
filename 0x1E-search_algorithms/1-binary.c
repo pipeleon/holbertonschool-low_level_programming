@@ -27,7 +27,7 @@ int binary_search2(int *array, size_t a, size_t b, int value)
 
     size = b - a;
 
-    if (size <= 0)
+    if (size <= 1)
     {
         return (-1);
     }
@@ -35,37 +35,33 @@ int binary_search2(int *array, size_t a, size_t b, int value)
     if (size % 2 == 0)
     {
         middle = size / 2;
-        if (array[middle] == value)
+        if (array[a + middle - 1] == value)
         {
-            return (middle);
+            return (a + middle - 1);
         }
-        else if (array[middle] > value)
+        else if (array[a + middle - 1] > value)
         {
-            return (binary_search2(array, a, array[middle - 1], value));
-        }
-        else if (array[middle + 1] == value)
-        {
-            return (middle + 1);
+            return (binary_search2(array, a, b - middle - 1, value));
         }
         else
         {
-            return (binary_search2(array, array[middle + 2], b, value));
+            return (binary_search2(array, a + middle, b, value));
         }
     }
     else
     {
         middle = (size + 1) / 2;
-        if (array[middle] == value)
+        if (array[a + middle] == value)
         {
-            return (middle);
+            return (a + middle);
         }
-        else if (array[middle] > value)
+        else if (array[a + middle] > value)
         {
-            return (binary_search2(array, a, array[middle - 1], value));
+            return (binary_search2(array, a, b - middle - 1, value));
         }
         else
         {
-            return (binary_search2(array, array[middle + 1], b, value));
+            return (binary_search2(array, a + middle, b, value));
         }
     }
 }
