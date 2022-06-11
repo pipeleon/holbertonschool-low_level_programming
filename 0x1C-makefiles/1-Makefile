@@ -1,0 +1,7 @@
+# Makefile Task 0
+
+CC = gcc
+SRC = main.c school.c -o school
+
+all:
+	$(CC) $(SRC)
